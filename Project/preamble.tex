@@ -1,0 +1,268 @@
+
+\documentclass[danish,12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}					% Dokumentets sprog
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,bm}
+\usepackage{ragged2e,anyfontsize}
+\usepackage{etex}
+\usepackage{nicefrac,xfrac}
+\usepackage[titletoc]{appendix}
+\usepackage{thmtools}
+\usepackage[pagebackref]{hyperref}
+\usepackage{MnSymbol,wasysym}
+\usepackage[makeroom]{cancel}
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage[danish]{varioref}
+\usepackage{natbib}
+\usepackage{dirtytalk}
+\usepackage{blindtext}
+\RequirePackage{etex}
+\usepackage{graphicx}
+\usepackage{flafter}
+\usepackage{float}
+\usepackage{systeme}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage[a4paper]{geometry}
+\usepackage{a4wide}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{colortbl}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[noend]{algorithmic}
+\usepackage{tasks}
+\usepackage{commath}
+\usepackage{calc}
+\usepackage{calrsfs}
+\usepackage{xfrac}
+\usepackage{blkarray}
+\usepackage[labelfont=bf]{caption}
+\usepackage{mathrsfs}
+\usepackage[mathscr]{euscript}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{mathdots}
+\usepackage{listings}
+\usepackage{bbm}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\color{purple},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{black},
+    stringstyle=\color{orange},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\renewcommand{\labelenumi}{\alph*)}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\vec}{\overrightarrow}
+\newcommand{\vn}{\varnothing}
+\newcommand{\an}{$\{a_n\}_{n=1}^{\infty}$}
+\newcommand{\zn}{$\{z_n\}_{n=1}^{\infty}$}
+\newcommand{\darr}{\Leftrightarrow}
+\renewcommand{\to}{\rightarrow}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\prtx}{\frac{\partial f}{\partial x}}
+\newcommand{\prty}{\frac{\partial f}{\partial y}}
+\newcommand{\vectwo}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+% \renewcommand{\Boo}{\phantom{1}}
+% \renewcommand{\boo}{\phantom{.}}
+% \renewcommand{\Bop}{\phantom{+}}
+
+%Fikser underfull og overfull
+\hbadness=10001
+\vbadness=10001
+
+%Bibliografi og litteratur
+%\bibliographystyle{Formalia/vancouver}
+\bibliographystyle{agsm}
+\setcitestyle{square}
+\usepackage[nottoc,numbib]{tocbibind}
+
+
+%Gør indholdsfortegnelse og bibliografi dansk
+\addto\captionsdanish{
+	\renewcommand\contentsname{Indholdsfortegnelse}
+	\renewcommand{\bibname}{Bibliografi}
+}
+
+% Definer * til at være \cdot %
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\cdot}}
+
+%%%% ORDDELING %%%%
+\hyphenation{In-te-res-se e-le-ment}
+
+%Sidehoved
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\newcommand{\chaptermark}[1]{ \markboth{\thechapter.\ #1}{}}
+\fancyheadoffset{0pt}
+\lhead{\nouppercase \leftmark}
+\rhead{Aalborg Universitet}
+\renewcommand{\chaptermark}[1]
+        {\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]
+        {\markright{\thesection\ #1}}
+\lfoot[\fancyplain{}{\bfseries\thepage}]
+    {\fancyplain{}{}}
+\rfoot[\fancyplain{}{}]%
+    {\fancyplain{}{\bfseries\thepage}}
+\patchcmd{\chapter}{plain}{fancy}{}{}
+
+%Kapiteludseende
+\usepackage{xcolor}
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{5pt}{25pt}
+
+% Define a simple command to use at the start of a table row to make it have a shaded background
+\newcommand{\gray}{\rowcolor[gray]{.9}}
+
+\usepackage{textcomp}
+\usepackage{url}
+
+\usepackage{pst-func}
+%TikZ
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows,positioning,automata, petri, topaths,graphs,graphs.standard,arrows.meta}
+\usepackage{tkz-berge}
+%\usepackage[position=top]{subfig}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{marvosym}
+%---- pseudocode
+\usepackage[ruled,linesnumbered]{algorithm2e}
+%\usepackage{algorithm}
+\floatname{algorithm}{Algoritme}
+\renewcommand{\gets}{:=}
+
+% \usepackage{framed}
+% \definecolor{myGray}{HTML}{F9F9F9}
+% \renewenvironment{leftbar}[4][\hsize]
+% {\def\FrameCommand
+%     {{\color{#2}\vrule width #4pt}
+%         \hspace{-8pt}
+%         \fboxsep=\FrameSep\colorbox{#3}}
+%     \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}}
+% {\endMakeFramed}
+
+% %Sætninger, definitioner, mm. general stil
+\declaretheoremstyle[
+    % spaceabove=18pt,
+    % spacebelow=18pt,
+    headfont=\normalfont\bfseries,
+    bodyfont = \normalfont\itshape,
+    postheadspace=2mm,
+    headpunct={.}]{mystyle}
+\declaretheoremstyle[
+    % spaceabove=18pt,
+    % spacebelow=18pt,
+    headfont=\normalfont\bfseries,
+    bodyfont = \normalfont,
+    margin = 50,
+    postheadspace=2mm,
+    headpunct={.}]{mystyle2}
+
+
+% %Sætning
+\declaretheorem[name={Sætning}, style=mystyle,numberwithin=section]{thm}
+\newenvironment{thmx}[1]
+    {\begin{thm}#1}{\end{thm}}
+
+% %Definition
+\declaretheorem[name={Definition}, style=mystyle,sibling=thm]{defni}
+\newenvironment{defn}[1]
+    {\begin{defni}#1}{\end{defni}}
+
+% %Eksempel
+% \declaretheorem[name={Eksempel}, style=mystyle2, sibling=thm]{exmp}
+% \newenvironment{eks}[1]
+%     {\begin{exmp}#1}{\end{exmp}}
+ %Lemma
+\declaretheorem[name={Lemma}, style=mystyle,sibling=thm]{lema}
+\newenvironment{lem}[1]
+    {\begin{lema}#1}{\end{lema}}
+
+%Bevis
+\declaretheoremstyle[
+    spaceabove=14pt,
+    spacebelow=6pt,
+    headfont=\normalfont\itshape\bfseries,
+    bodyfont = \normalfont,
+    postheadspace=1mm,
+    qed=$\blacksquare$,
+    headpunct={.}]{bevisstyle}
+\declaretheorem[name={Bevis}, style=bevisstyle,numbered=no]{bev}
+
+%Inline graphics
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+\newcommand*\inlinegraphics[1]{%
+  \settototalheight\myheight{Xygp}%
+  \settodepth\mydepth{Xygp}%
+  \raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}}
+
+
+%Kommandoer, som gør jeres liv nemmere, når I skriver. Pas på med at lave for mange kommandoer selv
+%da det kan være træls for jer når I skal indsende MWE (minimal working examples) ind i fx stackexchange
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\tr}{\mathrm{tr }}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\cross}{\times}
+\newcommand{\m}{\cdot}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+% Number of matrix cloumns
+\setcounter{MaxMatrixCols}{20}
